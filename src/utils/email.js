@@ -15,7 +15,7 @@ export const sendEmail = async (to, subject, html) => {
 			user: process.env.GMAIL_USER,
 			pass: process.env.GMAIL_APP_PASSWORD,
 		},
-		pool: true, // ✅ reuse connection
+		pool: true,
 		maxConnections: 5,
 		maxMessages: 100,
 	});
