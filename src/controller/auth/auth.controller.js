@@ -1,4 +1,5 @@
 // Models
+// import "../../config/env.js";
 import { User } from "../../models/user.model.js";
 
 import { sendEmail } from "../../utils/email.js";
@@ -23,7 +24,7 @@ import { generateSecret, generateURI, verify as verifyTwoFactorCode } from "otpl
 import { deleteQRCode, generateQRCode, getQRCodePath } from "../../utils/qrCode.js";
 
 const getAppUrl = () => {
-	return process.env.APP_URL;
+	return process.env.BASE_URL;
 };
 
 // Google Authentication
