@@ -226,7 +226,7 @@ export const loginHandler = async (req, res) => {
 		res.cookie("refreshToken", refreshToken, {
 			httpOnly: true,
 			secure: isProd,
-			sameSite: "lax",
+			// sameSite: "lax",
 			maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
 		});
 
@@ -278,7 +278,7 @@ export const refreshHandler = async (req, res) => {
 		res.cookie("refreshToken", newRefreshToken, {
 			httpOnly: true,
 			secure: isProd,
-			sameSite: "lax",
+			// sameSite: "lax",
 			maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
 		});
 
@@ -525,7 +525,7 @@ export const googleCallbackHandler = async (req, res) => {
 		res.cookie("refreshToken", refreshToken, {
 			httpOnly: true,
 			secure: isProd,
-			sameSite: "lax",
+			// sameSite: "lax",
 			maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
 		});
 
@@ -624,7 +624,7 @@ export const facebookCallbackHandler = async (req, res) => {
 		res.cookie("refreshToken", refreshToken, {
 			httpOnly: true,
 			secure: isProd,
-			sameSite: "lax",
+			// sameSite: "lax",
 			maxAge: 7 * 24 * 60 * 60 * 1000,
 		});
 
