@@ -66,12 +66,16 @@ export const registerHandler = async (req, res) => {
 
 		const verifyUrl = `${getAppUrl()}/auth/verify-email?token=${verifyToken}`;
 
-		sendEmail(
+		await sendEmail(
 			newlyCreatedUser.email,
 			"Verify your email",
 			`<p>Please click the link below:</p>
 			 <a href="${verifyUrl}">${verifyUrl}</a>`
+<<<<<<< HEAD
 		).catch((err) => console.error("Email error:", err.message));
+=======
+		);
+>>>>>>> 09645d13982231df2bffe173c42aa0fe0528c958
 
 		return res.status(201).json({
 			message: "Registration successful! Please check your email to verify your account.",
