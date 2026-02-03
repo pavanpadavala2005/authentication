@@ -8,11 +8,16 @@ export const sendEmail = async (to, subject, html) => {
 	}
 
 	const transporter = nodemailer.createTransport({
-		service: "gmail",
+		host: "smtp.gmail.com",
+		port: 587,
+		secure: false,
 		auth: {
 			user: process.env.GMAIL_USER,
 			pass: process.env.GMAIL_APP_PASSWORD,
 		},
+		pool: true, // ✅ reuse connection
+		maxConnections: 5,
+		maxMessages: 100,
 	});
 
 	await transporter.sendMail({
