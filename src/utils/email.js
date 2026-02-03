@@ -16,8 +16,9 @@ export const sendEmail = async (to, subject, html) => {
 			pass: process.env.GMAIL_APP_PASSWORD,
 		},
 		pool: true,
-		maxConnections: 5,
-		maxMessages: 100,
+		maxConnections: 3,
+		connectionTimeout: 10000,
+		socketTimeout: 10000,
 	});
 
 	await transporter.sendMail({
